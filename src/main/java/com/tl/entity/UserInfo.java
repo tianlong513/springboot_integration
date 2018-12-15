@@ -1,6 +1,9 @@
 package com.tl.entity;
 
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,20 +17,23 @@ import java.util.Date;
  * @create: 2018-12-10 16:19
  **/
 
+//@ApiModel(value = "user_info", description = "用户对象")
 @Entity
 @Table(name = "user_info")
 public class UserInfo {
     @Id
     private String id;
 
+    @ApiModelProperty(value = "用户名", name = "username", required = true, example = "123456")
     @Column(name = "name")
     private String name;
 
+    @ApiModelProperty(value = "密码", name = "password", example = "123456")
     @Column(name = "password")
     private String password;
 
     @Column(name = "phone")
-    private Integer phone;
+    private String phone;
 
     @Column(name = "create_date")
     private Date createDate;
@@ -56,11 +62,11 @@ public class UserInfo {
         this.password = password;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

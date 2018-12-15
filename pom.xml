@@ -11,7 +11,7 @@
     <groupId>com</groupId>
     <artifactId>tl</artifactId>
     <version>1.0.0</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>springboot_integration</name>
 
     <properties>
@@ -20,6 +20,7 @@
         <java.version>1.8</java.version>
         <!--mybatisplus版本-->
         <baomidou.version>3.0.5</baomidou.version>
+        <druid_alibaba.version>1.1.9</druid_alibaba.version>
     </properties>
 
     <dependencies>
@@ -43,7 +44,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.9</version>
+            <version>${druid_alibaba.version}</version>
         </dependency>
 
         <dependency>
@@ -57,6 +58,12 @@
             <version>${baomidou.version}</version>
         </dependency>
 
+        <!--ththymeleaf模板-->
+      <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
         <!--热部署-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -65,9 +72,30 @@
         </dependency>
 
 
+        <!--接口文档自动生成-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+
+        <!--项目打包-->
+        <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat</artifactId>
+        <scope>provided</scope>
+        </dependency>
+
+
     </dependencies>
 
     <build>
+        <finalName>springboot_integration</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

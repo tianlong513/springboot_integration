@@ -12,7 +12,9 @@ import java.util.List;
  * @create: 2018-12-10 17:10
  **/
 public interface UserInfoService{
-    public Object UserInfoList();
+    public Object UserInfoList(String id);
 
     List <UserInfo> userList();
+
+    Object save(UserInfo userInfo);
 }
