@@ -1,4 +1,5 @@
-server: #配置tomcat
+####配置tomcat
+server:
   port: 8080 #端口
   tomcat:
     uri-encoding: UTF-8
@@ -13,12 +14,26 @@ spring:
       initial-size: 1   #初始连接数
       min-idle: 1   #最小连接数
       max-active: 10  #最大连接数
-  # jpa配置
+####jpa配置
   jpa:
     hibernate:
-      ddl-auto: update #启动项目创建数据库新表
-    show-sql: true  #日志显示sql
+      #启动项目创建数据库新表
+      ddl-auto: update
+    #日志显示sql语句
+    show-sql: true
 
+####邮件配置
+  mail:
+    #邮箱服务器地址
+    host: smtp.163.com
+    #用户名
+    username: quantianlong0420@163.com
+    #密码
+    password: tl12345678
+    protocol: smtp
+
+
+####mybatis-plus配置
 mybatis-plus:
   mapper-locations: classpath:/mapper/**Mapper.xml
   type-aliases-package: com.tl.entity   #实体类扫描，多个package用","隔开
@@ -42,10 +57,11 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
-#开启swagger文档
+####开启swagger文档
 swagger:
   enable: true
 
-#文件日志配置
-logging:
-  path: logs/
+####文件日志配置
+#logging:
+#  path: logs/
+
